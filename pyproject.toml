@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unitconv"
+version = "0.0.1"
+description = "Tiny unit converter - demo project for claude-roadmap-agents"
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
