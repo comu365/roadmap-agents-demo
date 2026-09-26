@@ -40,4 +40,5 @@ linked to a 🙋 item; BLOCK or more than 2 rework rounds; `.github/workflows/` 
 ### Guardrails
 
 - Agents never push or merge to `main`, never handle credentials, never touch 🙋 items.
-- Only a human merge turns an item ✅. Agents go as far as 🔍.
+- An item is only *done* once a human (or a policy-allowed Claude) merges it. In this repo there is no deployment, so the builder
+  marks its item ✅ **on its branch** — that ✅ reaches `main` only through the merge. Repos that deploy use 🔍 instead and flip to ✅ after release.
