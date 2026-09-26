@@ -5,7 +5,7 @@ How it runs: see "Roadmap loop" in `CLAUDE.md`.
 
 ## How to read
 
-- **Status**: ⬜ todo · 🔨 in progress (builder) · 🔍 in review (branch pushed) · ✅ done (only after a human merge) · ⛔ on hold
+- **Status**: ⬜ todo · 🔨 in progress (builder) · 🔍 in review (branch pushed) · ✅ done (once merged) · ⛔ on hold
 - **Run**: 🤖 an agent may implement it · 🙋 human only (agents don't touch it; they say "this one is yours")
 - **Acceptance criteria** must be *checkable sentences*. If they are vague, the builder asks instead of implementing.
 - An item is **one branch, one review**. If it doesn't fit in one review, split it.
