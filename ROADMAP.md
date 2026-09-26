@@ -22,7 +22,8 @@ How it runs: see "Roadmap loop" in `CLAUDE.md`.
 ## Phase 1 — core conversions
 
 ### P1-1 Length conversion
-- Status: ⬜ · Run: 🤖 · Depends on: —
+- Status: 🔍 · Run: 🤖 · Depends on: —
+- Branch: claude/roadmap-p1-1-length-conversion
 - Goal: `unitconv.convert(value, from_unit, to_unit)` converts between length units.
 - Units: `m`, `km`, `cm`, `mm`, `in`, `ft`, `yd`, `mi`
 - Acceptance criteria:
