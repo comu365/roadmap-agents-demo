@@ -77,3 +77,12 @@ def test_inf_input_raises():
 def test_neg_inf_input_raises():
     with pytest.raises(ValueError):
         unitconv.convert(-math.inf, "m", "km")
+
+
+def test_overflow_raises_value_error_not_overflow_error():
+    # A finite value whose exact result is too large for a double (extreme
+    # value combined with the km->mm unit-scale ratio) must not leak a raw
+    # OverflowError — it's still bad output, so it's a ValueError like any
+    # other input this function rejects.
+    with pytest.raises(ValueError, match="km.*mm"):
+        unitconv.convert(1e308, "km", "mm")

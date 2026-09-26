@@ -53,4 +53,15 @@ def convert(value: float, from_unit: str, to_unit: str) -> float:
     # the nearest double at the very end (Fraction -> float is correctly
     # rounded), so intermediate binary-float error can't creep in.
     ratio = _LENGTH_TO_METERS[from_unit] / _LENGTH_TO_METERS[to_unit]
-    return float(Fraction(value) * ratio)
+    result = Fraction(value) * ratio
+    try:
+        return float(result)
+    except OverflowError as e:
+        # The exact result is too large to fit in a double (e.g. an extreme
+        # value combined with a large unit-scale ratio, such as km -> mm).
+        # No silent failure: reject it explicitly instead of raising a bare
+        # OverflowError.
+        raise ValueError(
+            f"result of converting {value!r} from {from_unit!r} to "
+            f"{to_unit!r} is too large to represent"
+        ) from e
