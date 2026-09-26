@@ -22,15 +22,16 @@ How it runs: see "Roadmap loop" in `CLAUDE.md`.
 ## Phase 1 — core conversions
 
 ### P1-1 Length conversion
-- Status: ⬜ · Run: 🤖 · Depends on: —
+- Status: ✅ · Run: 🤖 · Depends on: —
+- Branch: claude/roadmap-p1-1-length-conversion
 - Goal: `unitconv.convert(value, from_unit, to_unit)` converts between length units.
 - Units: `m`, `km`, `cm`, `mm`, `in`, `ft`, `yd`, `mi`
 - Acceptance criteria:
-  - [ ] `convert(1, "mi", "m") == 1609.344` (international mile, exact)
-  - [ ] `convert(1, "ft", "in") == 12` and `convert(1, "in", "cm") == 2.54`
-  - [ ] every pair of units round-trips: `convert(convert(x, a, b), b, a)` equals `x` within 1e-12 relative
-  - [ ] unknown unit (e.g. `"parsec"`) raises `ValueError` naming the unit
-  - [ ] `math.nan` / `math.inf` input raises `ValueError` (no silent NaN output)
+  - [x] `convert(1, "mi", "m") == 1609.344` (international mile, exact)
+  - [x] `convert(1, "ft", "in") == 12` and `convert(1, "in", "cm") == 2.54`
+  - [x] every pair of units round-trips: `convert(convert(x, a, b), b, a)` equals `x` within 1e-12 relative
+  - [x] unknown unit (e.g. `"parsec"`) raises `ValueError` naming the unit
+  - [x] `math.nan` / `math.inf` input raises `ValueError` (no silent NaN output)
 
 ### P1-2 Temperature conversion
 - Status: ⬜ · Run: 🤖 · Depends on: P1-1
