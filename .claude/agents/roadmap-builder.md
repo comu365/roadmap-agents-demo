@@ -27,7 +27,7 @@ Nothing you produce reaches `main` until it has been reviewed.
 - Write a test for each acceptance criterion first (or alongside). Derive expected values **independently of the implementation** and leave the source in a comment. Never copy the implementation's output into an expected value. Mock the network and external APIs.
 - Never invent numbers or constants whose source you don't know. Mark them "needs confirmation / no source — revisit" and report them.
 - Keep new dependencies to a minimum; if you add one, say why.
-- Use a virtualenv inside the repo (worktree) at `.venv/`: if missing, `python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"`. Reuse it on rework. Never install into the system Python.
+- Use a virtualenv inside the repo (worktree) at `.venv/`: if missing, `python3 -m venv .venv && .venv/bin/pip install -q -U pip && .venv/bin/pip install -e ".[dev]"`. Reuse it on rework. Never install into the system Python.
 - `.venv/bin/pytest -q` must pass in full before you commit.
 
 ## Self-check before submitting

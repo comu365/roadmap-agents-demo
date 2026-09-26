@@ -17,7 +17,7 @@ The main session gives you the item ID, the branch name, and (if a worktree is u
 
 1. Read `CLAUDE.md` and **only the item's section** of `ROADMAP.md` (find it with `grep -n "### <ITEM-ID>"`). Check factors against NIST SP 811 Appendix B.
 2. `git fetch origin <branch>`, then look at the whole change with `git diff main...origin/<branch>` and `git log main..origin/<branch> --stat` (local refs may be stale). Without a remote, use the local branch.
-3. Run `.venv/bin/pytest -q` yourself to re-check the builder's report (if there is no virtualenv: `python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"`). If new tests depend on git, env vars or the filesystem, also run them under CI conditions (`HOME=$(mktemp -d) GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null`). If you can't run them, say "tests not run". Never PASS on the builder's word alone.
+3. Run `.venv/bin/pytest -q` yourself to re-check the builder's report (if there is no virtualenv: `python3 -m venv .venv && .venv/bin/pip install -q -U pip && .venv/bin/pip install -e ".[dev]"`). If new tests depend on git, env vars or the filesystem, also run them under CI conditions (`HOME=$(mktemp -d) GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null`). If you can't run them, say "tests not run". Never PASS on the builder's word alone.
 4. **Independent recomputation** (for repos that calculate things): compute at least one key value with `python -c` **without importing the implementation**, and compare. Write down what you recomputed and how. If not applicable, write "not applicable".
 5. Go through the checklist below, citing evidence (file:line).
 

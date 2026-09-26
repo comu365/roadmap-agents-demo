@@ -11,7 +11,7 @@ A tiny unit converter. It exists to demonstrate the builder → reviewer roadmap
 
 ## Commands
 
-- Setup: `python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"`
+- Setup: `python3 -m venv .venv && .venv/bin/pip install -q -U pip && .venv/bin/pip install -e ".[dev]"`
 - Tests: `.venv/bin/pytest -q`
 
 ## Roadmap loop
