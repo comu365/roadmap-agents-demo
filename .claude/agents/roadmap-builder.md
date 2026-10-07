@@ -29,6 +29,7 @@ Nothing you produce reaches `main` until it has been reviewed.
 - Keep new dependencies to a minimum; if you add one, say why.
 - Use a virtualenv inside the repo (worktree) at `.venv/`: if missing, `python3 -m venv .venv && .venv/bin/pip install -q -U pip && .venv/bin/pip install -e ".[dev]"`. Reuse it on rework. Never install into the system Python.
 - `.venv/bin/pytest -q` must pass in full before you commit.
+- After each step (design settled, part implemented, tests passing), update one line `진행: N/M — what was just done` on the item in ROADMAP.md, then commit and push (branch only), so the main session can read real progress instead of guessing from an estimate.
 
 ## Self-check before submitting
 
